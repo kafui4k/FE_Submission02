@@ -1,17 +1,30 @@
+import login from "./login";
 import "./styles/main.scss";
 import logo from "./assets/Freddys_Logo.svg";
 
 const pumpKin = document.getElementById("logoImg");
 pumpKin.src = logo;
 
-/**
- * TODO
- * 1. get input fields
- * 2. validate them
- * 3. call login function
- * 4. pass input values to the login function (API call)
- * 5. if true, redirect to dashboard
- * 6. if not true, stay on login page, raise error
- */
+const username = document.getElementById("username");
+const password = document.getElementById("password");
 
-console.log("Initialize Project");
+const submitBtn = document.getElementById("submit");
+
+submitBtn.addEventListener("click", async function (event) {
+  event.preventDefault();
+
+  const uValue = username.value;
+  const pValue = password.value;
+
+  if (uValue == "" || pValue == "") {
+    return;
+  } else {
+    const data = await login(uValue, pValue);
+
+    if (data.access_token) {
+      return (window.location = "/dashboard.html");
+    } else {
+      alert("invalid username or password");
+    }
+  }
+});

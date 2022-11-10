@@ -1,11 +1,17 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+const pages = ["index", "dashboard"];
+
 module.exports = {
   mode: "development",
-  entry: {
-    bundle: path.resolve(__dirname, "src/index.js"),
-  },
+  // entry: {
+  //   bundle: path.resolve(__dirname, "src/index.js"),
+  // },
+  entry: pages.reduce((config, page) => {
+    config[page] = `./src/${page}.js`;
+    return config;
+  }, {}),
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].js",
@@ -44,11 +50,22 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: "FE_Submission02",
-      filename: "index.html",
-      template: "src/template.html",
-    }),
-  ],
+  // plugins: [
+  //   new HtmlWebpackPlugin({
+  //     title: "FE_Submission02",
+  //     filename: "index.html",
+  //     template: "src/template.html",
+  //   }),
+  // ],
+  plugins: [].concat(
+    pages.map(
+      (page) =>
+        new HtmlWebpackPlugin({
+          inject: true,
+          template: `./src/${page}.html`,
+          filename: `${page}.html`,
+          chunks: [page],
+        })
+    )
+  ),
 };
