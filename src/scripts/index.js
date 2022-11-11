@@ -1,6 +1,6 @@
 import login from "./login";
-import "./styles/main.scss";
-import logo from "./assets/Freddys_Logo.svg";
+import "../styles/main.scss";
+import logo from "../assets/Freddys_Logo.svg";
 
 const pumpKin = document.getElementById("logoImg");
 pumpKin.src = logo;

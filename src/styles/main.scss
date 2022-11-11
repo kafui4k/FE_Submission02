@@ -43,13 +43,30 @@ ul, li {
     padding-left: 0;
 }
 
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .right {
     padding: 20px;
     display: flex;
     flex: 50%;
     flex-direction: column;
-    justify-content: space-around;
+    // justify-content: space-around;
     
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-search {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
 }
 
 .right > h3 {
