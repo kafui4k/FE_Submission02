@@ -1,0 +1,25 @@
+# FE_Submission02
+
+Assignment Solution
+
+## Table of Contents
+
+- [FE_Submission02](#fe_submission02)
+  - [Table of Contents](#table-of-contents)
+  - [Getting Started](#getting-started)
+  - [Tech Stack](#tech-stack)
+
+## Getting Started
+
+- Clone the repository.
+- Run `npm install` to install dependencies.
+- Run `npm run build` to build application.
+- Run `npm run dev` to start application.
+
+## Tech Stack
+
+- [Babel]
+- [Axios]
+- [Chart]
+- [Sass]
+- [Babel]
