@@ -21,8 +21,11 @@ submitBtn.addEventListener("click", async function (event) {
   } else {
     const data = await login(uValue, pValue);
 
-    if (data.access_token) {
-      return (window.location = "/dashboard.html");
+    if (data) {
+      localStorage.setItem("acctoken", data.access_token);
+      localStorage.setItem("reftoken", data.refresh_token);
+      return (window.location =
+        "/dashboard.html" + `?user=${data.access_token}`);
     } else {
       alert("invalid username or password");
     }
