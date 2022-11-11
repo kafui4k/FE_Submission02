@@ -23,4 +23,3 @@ Assignment Solution
 - [Axios]
 - [Chart]
 - [Sass]
-- [Babel]
