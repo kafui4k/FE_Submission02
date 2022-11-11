@@ -11,7 +11,7 @@ Assignment Solution
 
 ## Getting Started
 
-- Clone the repository.
+- [Clone the repository](https://github.com/kafui4k/FE_Submission02)
 - Run `npm install` to install dependencies.
 - Run `npm run build` to build application.
 - Run `npm run dev` to start application.
