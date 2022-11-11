@@ -1,7 +1,7 @@
 {
   "name": "fe_submission02",
   "version": "1.0.0",
-  "description": "",
+  "description": "a Assignment Solution Dashboard SPA",
   "main": "index.js",
   "scripts": {
     "build": "webpack",

@@ -1,6 +1,6 @@
 import getDashboardData, { refreshToken } from "./getDashboardData";
-import "./styles/main.scss";
-import logo from "./assets/Freddys_Logo.svg";
+import "../styles/main.scss";
+import logo from "../assets/Freddys_Logo.svg";
 import { Chart } from "chart.js";
 import axios from "axios";
 
@@ -8,6 +8,13 @@ const pumpKin = document.getElementById("logoImg");
 pumpKin.src = logo;
 
 const table = document.getElementById("best-sellers-table-data");
+const orderBtn = document.getElementById("orders");
+
+orderBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  window.location = "/orders.html";
+});
 const myChart = document.getElementById("myChart");
 
 var access_token = localStorage.getItem("acctoken");
@@ -27,19 +34,6 @@ async function data() {
   let apiData;
   if (access_token) {
     apiData = await getDashboardData(access_token, refresh_token);
-
-    // check if its fiften minutes from time logged in
-    // send a refresh token
-    var d = new Date();
-    var minutes = 15 - (d.getMinutes() % 15); // the number of minutes till the next 15.
-    // window.setTimeout(doSomething, minutes * 60 * 1000);
-    var ddM = minutes * 60 * 1000;
-
-    // if (ddM) {
-    //   apiData = await refreshToken(refresh_token);
-    // } else {
-    //   console.error("token not available");
-    // }
   } else {
     console.error("token not available");
   }

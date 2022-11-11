@@ -1,7 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const pages = ["index", "dashboard"];
+const pages = ["index", "dashboard", "orders"];
 
 module.exports = {
   mode: "development",
@@ -9,7 +9,7 @@ module.exports = {
   //   bundle: path.resolve(__dirname, "src/index.js"),
   // },
   entry: pages.reduce((config, page) => {
-    config[page] = `./src/${page}.js`;
+    config[page] = `./src/scripts/${page}.js`;
     return config;
   }, {}),
   output: {

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders | FE_Submission02</title>
+<script defer src="orders.js"></script></head>
+<body>
+    <div class="dashboard-wrapper">
+        <div class="left">
+            <img id="logoImg" alt="Freddys_Logo" width="80px" height="80px" />
+            <ul>
+                <li>Dashboard</li>
+                <li><a href="orders.html">Orders</a></li>
+                <li>Logout</li>
+            </ul>
+        </div>
+        <div class="right">
+            <div class="header">
+                <h3>Orders</h3>
+                <div class="header-search">
+                    <img id="search-icon" width="20px" height="20px" />
+                    <input type="search" name="search" id="search-order" />
+                </div>
+            </div>
+
+            <div class="best-sellers-container">
+                <div class="best-sellers-table">
+                    <table class="best-sellers-table-data" id="best-sellers-table-data" style="width:100%; height: 100%;">
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Date</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                        </tr>
+                        <tbody id="table-data-values"></tbody>
+                        
+                    </table>
+                   <div style="display: flex; align-items: center;">
+                    <span>Page 1 of 3</span>
+                    <img id="right-arrow" height="20px" width="20px" />
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
